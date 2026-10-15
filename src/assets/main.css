@@ -1,0 +1,230 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #0e0e10;
+  --bg-elevated: #18181b;
+  --bg-panel: #1f1f23;
+  --bg-input: #0e0e10;
+  --border: #2f2f35;
+  --border-strong: #3a3a40;
+
+  --text: #efeff1;
+  --text-muted: #adadb8;
+  --text-faint: #7c7c85;
+
+  --accent: #9147ff;
+  --accent-hover: #772ce8;
+  --accent-soft: rgba(145, 71, 255, 0.16);
+
+  --success: #00c853;
+  --warning: #ffb300;
+  --danger: #e91916;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a1f 0%, var(--bg) 45%);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* Botones ------------------------------------------------------------------ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.button--ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: var(--bg-elevated);
+}
+
+.button--danger {
+  background: transparent;
+  border-color: rgba(233, 25, 22, 0.5);
+  color: #ff7b78;
+}
+
+.button--danger:hover:not(:disabled) {
+  background: rgba(233, 25, 22, 0.12);
+}
+
+/* Controles ---------------------------------------------------------------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.field__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.field__value {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+/* Paneles ------------------------------------------------------------------ */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel__title {
+  font-size: 1rem;
+}
+
+.hint {
+  color: var(--text-faint);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.error-text {
+  color: #ff7b78;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0;
+}
+
+/* Scrollbar ---------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a40;
+  border-radius: 999px;
+  border: 2px solid var(--bg-panel);
+}

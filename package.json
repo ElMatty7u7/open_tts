@@ -1,0 +1,46 @@
+{
+  "name": "twitch-tts",
+  "version": "0.1.0",
+  "description": "Text-to-Speech en tiempo real para el chat de Twitch. Pensado para streamers que usan OBS.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "keywords": [
+    "twitch",
+    "tts",
+    "text-to-speech",
+    "chat",
+    "obs",
+    "vue"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc -b --force",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "vue": "^3.5.43",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.9.0",
+    "eslint": "^10.11.0",
+    "eslint-plugin-vue": "^10.11.1",
+    "prettier": "^3.9.9",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.2",
+    "vue-tsc": "^3.3.11"
+  }
+}
